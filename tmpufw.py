@@ -170,7 +170,7 @@ def ufw_insert(position, rule):
     if dry_run:
         print(command)
         return
-    check_output(command, stderr=STDOUT, shell=True)
+    check_output(command.split(), stderr=STDOUT)
 
 
 def ufw_delete(rule):
@@ -178,7 +178,7 @@ def ufw_delete(rule):
     if dry_run:
         print(command)
         return
-    check_output(command, stderr=STDOUT, shell=True)
+    check_output(command.split(), stderr=STDOUT)
 
 
 def ufw_error(error):
